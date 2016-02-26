@@ -1,0 +1,17 @@
+{
+  "extends": "standard",
+  "parser": "babel-eslint",
+  "settings": {
+    "ecmascript": 6,
+    "jsx": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "no-multi-spaces": [2, { exceptions: { "VariableDeclarator": true } }],
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1,
+    "react/react-in-jsx-scope": 1
+  }
+}
