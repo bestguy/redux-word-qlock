@@ -18,10 +18,12 @@ pre {
   font-size: 5vmin;
   letter-spacing: 0.46em;
   text-align: center;
-  transition: color 1s ease, text-shadow 1s ease;
 }
 
-.on {
+pre span {
+  transition: color 1s ease, text-shadow 1s ease;
+}
+pre .on {
   color: white;
   font-weight: normal;
   font-style: normal;
