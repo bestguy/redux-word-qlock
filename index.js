@@ -12,7 +12,7 @@ const render = () => {
 }
 
 setInterval(() => {
-  store.dispatch({ type: 'TICK' })
+  store.dispatch({ type: 'TICK', now: new Date() })
 }, 3000)
 
 render()
