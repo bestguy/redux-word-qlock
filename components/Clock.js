@@ -1,28 +1,26 @@
 import React, { Component } from 'react'
+import hyperx from 'hyperx'
 import './Clock.css'
 
-class Clock extends Component {
-  constructor (props) {
-    super(props)
-  }
+let hx = hyperx(React.createElement)
 
+class Clock extends Component {
   render () {
     const { time } = this.props
-    return (
+    return hx`
 <pre>
-<span className="on">IT</span>L<span className="on">IS</span>BFAMPM<br/>
-<span className={time.quarter ? 'on' : ''}>A</span>C<span className={time.quarter ? 'on' : ''}>QUARTER</span>DC<br/>
-<span className={time.twentyMinutes ? 'on' : ''}>TWENTY</span><span className={time.fiveMinutes ? 'on' : ''}>FIVE</span>X<br/>
-<span className={time.half ? 'on' : ''}>HALF</span>B<span className={time.tenMinutes ? 'on' : ''}>TEN</span>F<span className={time.to ? 'on' : ''}>TO</span><br/>
-<span className={time.past ? 'on' : ''}>PAST</span>ERU<span className={time.h == 9 ? 'on' : ''}>NINE</span><br/>
-<span className={time.h == 1 ? 'on' : ''}>ONE</span><span className={time.h == 6 ? 'on' : ''}>SIX</span><span className={time.h == 3 ? 'on' : ''}>THREE</span><br/>
-<span className={time.h == 4 ? 'on' : ''}>FOUR</span><span className={time.h == 5 ? 'on' : ''}>FIVE</span><span className={time.h == 2 ? 'on' : ''}>TWO</span><br/>
-<span className={time.h == 8 ? 'on' : ''}>EIGHT</span><span className={time.h == 11 ? 'on' : ''}>ELEVEN</span><br/>
-<span className={time.h == 7 ? 'on' : ''}>SEVEN</span><span className={time.h == 0 ? 'on' : ''}>TWELVE</span><br/>
-<span className={time.h == 10 ? 'on' : ''}>TEN</span>SE<span className={time.oclock ? 'on' : ''}>OCLOCK</span><br/>
-<span className={time.oneMinute ? 'on' : ''}>.</span>  <span className={time.twoMinutes ? 'on' : ''}>.</span>  <span className={time.threeMinutes ? 'on' : ''}>.</span>  <span className={time.fourMinutes ? 'on' : ''}>.</span>
-</pre>
-    )
+<span class="on">IT</span>L<span class="on">IS</span>BFAMPM
+<span class="${time.quarter ? 'on' : ''}">A</span>C<span class="${time.quarter ? 'on' : ''}">QUARTER</span>DC
+<span class="${time.twentyMinutes ? 'on' : ''}">TWENTY</span><span class="${time.fiveMinutes ? 'on' : ''}">FIVE</span>X
+<span class="${time.half ? 'on' : ''}">HALF</span>B<span class="${time.tenMinutes ? 'on' : ''}">TEN</span>F<span class="${time.to ? 'on' : ''}">TO</span>
+<span class="${time.past ? 'on' : ''}">PAST</span>ERU<span class="${time.h == 9 ? 'on' : ''}">NINE</span>
+<span class="${time.h == 1 ? 'on' : ''}">ONE</span><span class="${time.h == 6 ? 'on' : ''}">SIX</span><span class="${time.h == 3 ? 'on' : ''}">THREE</span>
+<span class="${time.h == 4 ? 'on' : ''}">FOUR</span><span class="${time.h == 5 ? 'on' : ''}">FIVE</span><span class="${time.h == 2 ? 'on' : ''}">TWO</span>
+<span class="${time.h == 8 ? 'on' : ''}">EIGHT</span><span class="${time.h == 11 ? 'on' : ''}">ELEVEN</span>
+<span class="${time.h == 7 ? 'on' : ''}">SEVEN</span><span class="${time.h == 0 ? 'on' : ''}">TWELVE</span>
+<span class="${time.h == 10 ? 'on' : ''}">TEN</span>SE<span class="${time.oclock ? 'on' : ''}">OCLOCK</span>
+<span class="${time.oneMinute ? 'on' : ''}">.</span>  <span class="${time.twoMinutes ? 'on' : ''}">.</span>  <span class="${time.threeMinutes ? 'on' : ''}">.</span>  <span class="${time.fourMinutes ? 'on' : ''}">.</span>
+</pre>`
   }
 }
 
